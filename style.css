@@ -9,8 +9,9 @@ body {
     display: flex;
     background: #0a0f1c;
     color: #e0e0e0;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* allow vertical scroll on mobile */
 }
 
 
@@ -18,15 +19,17 @@ body {
 
 .sidebar {
     width: 25%;
+    min-width: 250px;
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
-    padding: 2rem;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(180deg, #0d1224, #0a0f1c);
+    transition: all 0.3s ease;
 }
 
 .profile {
@@ -56,8 +59,9 @@ body {
 }
 
 .profile img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    max-width: 40vw;
     border-radius: 50%;
     margin-bottom: 1rem;
     box-shadow: 0 0 20px rgba(0, 230, 255, 0.4), 0 5px 15px rgba(0, 0, 0, 0.6);
@@ -180,9 +184,9 @@ nav ul li:hover {
 .content {
     margin-left: 25%;
     width: 75%;
+    padding: 2rem;
     height: 100vh;
     overflow-y: auto;
-    padding: 3rem;
 }
 
 section {
@@ -268,6 +272,12 @@ section h2 {
     font-size: 0.9rem;
 }
 
+.experience-card,
+.project-card {
+    width: 100%;
+    max-width: 100%;
+}
+
 
 /* PROJECT CARDS */
 
@@ -302,4 +312,91 @@ section h2 {
 .project-card p {
     font-size: 0.9rem;
     color: #bbb;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 30%;
+    }
+    .content {
+        margin-left: 30%;
+        width: 70%;
+        padding: 1.5rem;
+    }
+    .profile h1 {
+        font-size: 1.4rem;
+    }
+    .profile h3 {
+        font-size: 1rem;
+    }
+}
+
+
+/* Mobile (≤768px) */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    nav ul li {
+        width: auto;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .social {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Small Mobile (≤480px) */
+
+@media (max-width: 480px) {
+    .profile img {
+        width: 80px;
+        height: 80px;
+    }
+    .profile h1 {
+        font-size: 1.2rem;
+    }
+    .profile h3 {
+        font-size: 0.9rem;
+    }
+    section h2 {
+        font-size: 1.2rem;
+    }
+    .experience-card,
+    .project-card {
+        padding: 1rem;
+    }
 }
