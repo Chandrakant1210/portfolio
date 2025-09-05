@@ -1,3 +1,5 @@
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +13,10 @@ body {
     color: #e0e0e0;
     min-height: 100vh;
     overflow-x: hidden;
-    /* allow vertical scroll on mobile */
 }
 
 
-/* LEFT SIDEBAR */
+/* SIDEBAR */
 
 .sidebar {
     width: 25%;
@@ -37,31 +38,9 @@ body {
     margin-bottom: 2rem;
 }
 
-.profile h1 {
-    font-size: 1.6rem;
-    color: #00e6ff;
-    margin: 0.5rem 0;
-    text-shadow: 0 0 10px #00e6ff;
-}
-
-.profile h3 {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.profile p {
-    font-size: 0.9rem;
-    color: #aaa;
-    line-height: 1.4;
-    margin-bottom: 0.3rem;
-}
-
 .profile img {
     width: 100px;
     height: 100px;
-    max-width: 40vw;
     border-radius: 50%;
     margin-bottom: 1rem;
     box-shadow: 0 0 20px rgba(0, 230, 255, 0.4), 0 5px 15px rgba(0, 0, 0, 0.6);
@@ -77,6 +56,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
+    text-shadow: 0 0 10px #00e6ff;
 }
 
 .profile h3 {
@@ -88,35 +68,7 @@ body {
 .profile p {
     font-size: 0.9rem;
     color: #aaa;
-}
-
-.profile-buttons {
-    display: flex;
-    flex-direction: column;
-    /* stack vertically */
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-    align-items: center;
-}
-
-.profile-buttons button {
-    width: 80%;
-    padding: 0.7rem;
-    border: 2px solid #00e6ff;
-    background: transparent;
-    color: #00e6ff;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.profile-buttons button:hover {
-    background: #00e6ff;
-    color: #000;
-    box-shadow: 0 0 15px #00e6ff;
-    transform: scale(1.05);
+    line-height: 1.4;
 }
 
 
@@ -128,14 +80,10 @@ nav {
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
-    /* stack vertically */
     gap: 0.8rem;
     align-items: center;
-    /* center horizontally */
 }
 
 nav ul li {
@@ -148,7 +96,6 @@ nav ul li {
     font-weight: bold;
     font-size: 1rem;
     color: #00e6ff;
-    background: transparent;
     transition: 0.3s;
 }
 
@@ -160,11 +107,12 @@ nav ul li:hover {
 }
 
 
-/* SOCIAL */
+/* SOCIAL ICONS */
 
 .social {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .social a {
@@ -202,40 +150,7 @@ section h2 {
 }
 
 
-/* EXPERIENCE CARDS */
-
-.experience-item {
-    margin-bottom: 2rem;
-}
-
-.experience-item h3 {
-    color: #fff;
-    font-size: 1.2rem;
-}
-
-.experience-item span {
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
-.experience-item p {
-    margin: 0.5rem 0;
-    color: #ccc;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tags span {
-    background: #112;
-    padding: 0.3rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    color: #00e6ff;
-}
+/* EXPERIENCE / ACHIEVEMENTS / LEADERSHIP CARDS */
 
 .experience-card {
     background: rgba(0, 20, 40, 0.8);
@@ -254,6 +169,20 @@ section h2 {
 .experience-card h3 {
     color: #00e6ff;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.experience-card span {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.8rem;
+}
+
+.experience-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 0.8rem;
 }
 
 .experience-card ul {
@@ -269,13 +198,7 @@ section h2 {
     color: #00e6ff;
     padding: 0.3rem 0.7rem;
     border-radius: 6px;
-    font-size: 0.9rem;
-}
-
-.experience-card,
-.project-card {
-    width: 100%;
-    max-width: 100%;
+    font-size: 0.85rem;
 }
 
 
@@ -306,13 +229,16 @@ section h2 {
 
 .project-card h4 {
     color: #00e6ff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .project-card p {
     font-size: 0.9rem;
     color: #bbb;
 }
+
+
+/* RESPONSIVENESS */
 
 @media (max-width: 1024px) {
     .sidebar {
@@ -323,16 +249,7 @@ section h2 {
         width: 70%;
         padding: 1.5rem;
     }
-    .profile h1 {
-        font-size: 1.4rem;
-    }
-    .profile h3 {
-        font-size: 1rem;
-    }
 }
-
-
-/* Mobile (≤768px) */
 
 @media (max-width: 768px) {
     body {
@@ -343,8 +260,6 @@ section h2 {
         width: 100%;
         height: auto;
         padding: 1rem;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
     }
     nav ul {
@@ -357,10 +272,6 @@ section h2 {
         width: auto;
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
-    }
-    .social {
-        justify-content: center;
-        margin-top: 1rem;
     }
     .content {
         margin-left: 0;
@@ -377,9 +288,6 @@ section h2 {
         height: auto;
     }
 }
-
-
-/* Small Mobile (≤480px) */
 
 @media (max-width: 480px) {
     .profile img {
